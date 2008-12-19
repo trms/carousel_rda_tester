@@ -325,55 +325,55 @@ namespace TesterApp
 			switch (CommandList.SelectedItem.ToString())
 			{
 				case "CreatePage1":
-					CommandBox.Text = SampleCommand.CreatePage1();
+					CommandBox.Text = SampleCommand.CreatePage1().Replace("\n", Environment.NewLine);
 					break;
 				case "CreatePage2":
-					CommandBox.Text = SampleCommand.CreatePage2();
+                    CommandBox.Text = SampleCommand.CreatePage2().Replace("\n", Environment.NewLine);
 					break;
 				case "CreatePage3":
-					CommandBox.Text = SampleCommand.CreatePage3();
+                    CommandBox.Text = SampleCommand.CreatePage3().Replace("\n", Environment.NewLine);
 					break;
 				case "UpdatePage":
-					CommandBox.Text = SampleCommand.UpdatePage();
+                    CommandBox.Text = SampleCommand.UpdatePage().Replace("\n", Environment.NewLine);
 					break;
 				case "CreateAlertPage":
-					CommandBox.Text = SampleCommand.CreateAlertPage();
+                    CommandBox.Text = SampleCommand.CreateAlertPage().Replace("\n", Environment.NewLine);
 					break;
 				case "CreateCrawl":
-					CommandBox.Text = SampleCommand.CreateCrawl();
+                    CommandBox.Text = SampleCommand.CreateCrawl().Replace("\n", Environment.NewLine);
 					break;
 				case "CreateCrawlInvalidUser":
-					CommandBox.Text = SampleCommand.CreateCrawlInvalidUser();
+                    CommandBox.Text = SampleCommand.CreateCrawlInvalidUser().Replace("\n", Environment.NewLine);
 					break;
 				case "CreateCrawl1Zone":
-					CommandBox.Text = SampleCommand.CreateCrawl1Zone();
+                    CommandBox.Text = SampleCommand.CreateCrawl1Zone().Replace("\n", Environment.NewLine);
 					break;
 				case "CreateCrawlInvalidZone":
-					CommandBox.Text = SampleCommand.CreateCrawlInvalidZone();
+                    CommandBox.Text = SampleCommand.CreateCrawlInvalidZone().Replace("\n", Environment.NewLine);
 					break;
 				case "ChangePageStatus":
-					CommandBox.Text = SampleCommand.ChangePageStatus();
+                    CommandBox.Text = SampleCommand.ChangePageStatus().Replace("\n", Environment.NewLine);
 					break;
 				case "DeletePage":
-					CommandBox.Text = SampleCommand.DeletePage();
+                    CommandBox.Text = SampleCommand.DeletePage().Replace("\n", Environment.NewLine);
 					break;
 				case "DeleteAllUserPages":
-					CommandBox.Text = SampleCommand.DeleteAllUserPages();
+                    CommandBox.Text = SampleCommand.DeleteAllUserPages().Replace("\n", Environment.NewLine);
 					break;
 				case "DeactivateAllAlertPages":
-					CommandBox.Text = SampleCommand.DeactivateAllAlertPages();
+                    CommandBox.Text = SampleCommand.DeactivateAllAlertPages().Replace("\n", Environment.NewLine);
 					break;
 				case "IllFormedCmd1":
-					CommandBox.Text = SampleCommand.IllFormedCmd1();
+                    CommandBox.Text = SampleCommand.IllFormedCmd1().Replace("\n", Environment.NewLine);
 					break;
 				case "IllFormedCmd2":
-					CommandBox.Text = SampleCommand.IllFormedCmd2();
+                    CommandBox.Text = SampleCommand.IllFormedCmd2().Replace("\n", Environment.NewLine);
 					break;
 				case "IllFormedCmd3":
-					CommandBox.Text = SampleCommand.IllFormedCmd3();
+                    CommandBox.Text = SampleCommand.IllFormedCmd3().Replace("\n", Environment.NewLine);
 					break;
 				case "IllFormedCmd4":
-					CommandBox.Text = SampleCommand.IllFormedCmd4();
+                    CommandBox.Text = SampleCommand.IllFormedCmd4().Replace("\n", Environment.NewLine);
 					break;
 			}
 
