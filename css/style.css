@@ -7,5 +7,6 @@ h2 {
 }
 
 img {
+  display: block;
   margin-top: 10px;
 }
