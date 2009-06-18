@@ -273,7 +273,8 @@ namespace TesterApp
 			CommandList.Items.Add("ChangePageStatus");
 			CommandList.Items.Add("DeletePage");
 			CommandList.Items.Add("DeleteAllUserPages");
-			CommandList.Items.Add("DeactivateAllAlertPages");
+            CommandList.Items.Add("DeactivateAllAlertPages");
+            CommandList.Items.Add("GetPlayerStatus");
 			CommandList.Items.Add("IllFormedCmd1");
 			CommandList.Items.Add("IllFormedCmd2");
 			CommandList.Items.Add("IllFormedCmd3");
@@ -362,7 +363,10 @@ namespace TesterApp
 					break;
 				case "DeactivateAllAlertPages":
                     CommandBox.Text = SampleCommand.DeactivateAllAlertPages().Replace("\n", Environment.NewLine);
-					break;
+                    break;
+                case "GetPlayerStatus":
+                    CommandBox.Text = SampleCommand.GetPlayerStatus().Replace("\n", Environment.NewLine);
+                    break;
 				case "IllFormedCmd1":
                     CommandBox.Text = SampleCommand.IllFormedCmd1().Replace("\n", Environment.NewLine);
 					break;
@@ -406,7 +410,7 @@ namespace TesterApp
 					XmlNodeList result = xdoc.GetElementsByTagName("Result");
 					XmlNodeList description = xdoc.GetElementsByTagName("Description");
 					XmlNodeList guids = xdoc.GetElementsByTagName("GUID");
-
+                    XmlNodeList playerStatuses = xdoc.GetElementsByTagName("PlayerStatus");
 
 					ResponseBox.Text += "Result: " + result[0].InnerText + crlf;
 					ResponseBox.Text += "Description: " + description[0].InnerText + crlf;
@@ -414,6 +418,15 @@ namespace TesterApp
 					for (int i = 0; i<guids.Count; i++)
 						ResponseBox.Text += "GUID: " + guids[i].InnerText + crlf;
 
+                    for (int i = 0; i < playerStatuses.Count; i++)
+                    {
+                        ResponseBox.Text += "PlayerStatus[0]:" + crlf;
+                        XmlNodeList elements = playerStatuses[i].ChildNodes;
+                        foreach (XmlNode node in elements)
+                        {
+                            ResponseBox.Text += "  " + node.Name + ": " + node.InnerText + crlf;
+                        }
+                    }
 
 					ResponseBox.Text += crlf;
 
@@ -691,7 +704,19 @@ namespace TesterApp
 	</DeactivateAllAlertPages>
 </CarouselCommand>";
 		}
-		
+
+        public static string GetPlayerStatus()
+        {
+            return @"<?xml version=""1.0"" encoding=""utf-8"" ?>
+<CarouselCommand xmlns=""http://www.trms.com/CarouselRemoteCommand"">
+	<!-- Sending this command will turn off all alert pages. -->
+	<GetPlayerStatus>
+		<UserName>xml</UserName>
+		<Password>trms</Password>
+	</GetPlayerStatus>
+</CarouselCommand>";
+        }
+
 		public static string IllFormedCmd1()
 		{
 			return @"<?xml version=""1.0"" encoding=""utf-8"" ?>
@@ -755,6 +780,5 @@ namespace TesterApp
 	</SomeStrangeCommand>
 </CarouselCommand>";
 		}
-		
-	}
+    }
 }
