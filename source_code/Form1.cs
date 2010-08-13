@@ -90,17 +90,20 @@ namespace TesterApp
 			// 
 			// CommandBox
 			// 
+			this.CommandBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+						| System.Windows.Forms.AnchorStyles.Left)));
 			this.CommandBox.Location = new System.Drawing.Point(8, 16);
 			this.CommandBox.Multiline = true;
 			this.CommandBox.Name = "CommandBox";
 			this.CommandBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
 			this.CommandBox.Size = new System.Drawing.Size(440, 264);
 			this.CommandBox.TabIndex = 0;
-			this.CommandBox.Text = "";
 			this.CommandBox.WordWrap = false;
 			// 
 			// CommandList
 			// 
+			this.CommandList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+						| System.Windows.Forms.AnchorStyles.Right)));
 			this.CommandList.Location = new System.Drawing.Point(8, 16);
 			this.CommandList.Name = "CommandList";
 			this.CommandList.Size = new System.Drawing.Size(352, 69);
@@ -108,6 +111,8 @@ namespace TesterApp
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+						| System.Windows.Forms.AnchorStyles.Right)));
 			this.groupBox1.Controls.Add(this.PreMadeCommandBtn);
 			this.groupBox1.Controls.Add(this.CommandList);
 			this.groupBox1.Location = new System.Drawing.Point(472, 8);
@@ -119,6 +124,7 @@ namespace TesterApp
 			// 
 			// PreMadeCommandBtn
 			// 
+			this.PreMadeCommandBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.PreMadeCommandBtn.Location = new System.Drawing.Point(8, 88);
 			this.PreMadeCommandBtn.Name = "PreMadeCommandBtn";
 			this.PreMadeCommandBtn.Size = new System.Drawing.Size(352, 23);
@@ -128,6 +134,9 @@ namespace TesterApp
 			// 
 			// ResponseBox
 			// 
+			this.ResponseBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+						| System.Windows.Forms.AnchorStyles.Left)
+						| System.Windows.Forms.AnchorStyles.Right)));
 			this.ResponseBox.Location = new System.Drawing.Point(8, 16);
 			this.ResponseBox.Multiline = true;
 			this.ResponseBox.Name = "ResponseBox";
@@ -135,12 +144,13 @@ namespace TesterApp
 			this.ResponseBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
 			this.ResponseBox.Size = new System.Drawing.Size(352, 192);
 			this.ResponseBox.TabIndex = 3;
-			this.ResponseBox.Text = "";
 			this.ResponseBox.WordWrap = false;
 			this.ResponseBox.TextChanged += new System.EventHandler(this.ResponseBox_TextChanged);
 			// 
 			// groupBox2
 			// 
+			this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+						| System.Windows.Forms.AnchorStyles.Left)));
 			this.groupBox2.Controls.Add(this.button1);
 			this.groupBox2.Controls.Add(this.CommandBox);
 			this.groupBox2.Location = new System.Drawing.Point(8, 64);
@@ -152,6 +162,7 @@ namespace TesterApp
 			// 
 			// button1
 			// 
+			this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.button1.Location = new System.Drawing.Point(336, 288);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(112, 23);
@@ -161,6 +172,9 @@ namespace TesterApp
 			// 
 			// groupBox3
 			// 
+			this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+						| System.Windows.Forms.AnchorStyles.Left)
+						| System.Windows.Forms.AnchorStyles.Right)));
 			this.groupBox3.Controls.Add(this.ClearResponses);
 			this.groupBox3.Controls.Add(this.ResponseBox);
 			this.groupBox3.Location = new System.Drawing.Point(472, 136);
@@ -172,6 +186,7 @@ namespace TesterApp
 			// 
 			// ClearResponses
 			// 
+			this.ClearResponses.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.ClearResponses.Location = new System.Drawing.Point(248, 216);
 			this.ClearResponses.Name = "ClearResponses";
 			this.ClearResponses.Size = new System.Drawing.Size(112, 23);
@@ -230,6 +245,7 @@ namespace TesterApp
 			// 
 			this.Server.Location = new System.Drawing.Point(56, 16);
 			this.Server.Name = "Server";
+			this.Server.Size = new System.Drawing.Size(100, 20);
 			this.Server.TabIndex = 0;
 			this.Server.Text = "demo.trms.com";
 			// 
@@ -246,8 +262,11 @@ namespace TesterApp
 			this.Load += new System.EventHandler(this.Form1_Load);
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox2.ResumeLayout(false);
+			this.groupBox2.PerformLayout();
 			this.groupBox3.ResumeLayout(false);
+			this.groupBox3.PerformLayout();
 			this.groupBox4.ResumeLayout(false);
+			this.groupBox4.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
@@ -279,6 +298,9 @@ namespace TesterApp
 			CommandList.Items.Add("IllFormedCmd2");
 			CommandList.Items.Add("IllFormedCmd3");
 			CommandList.Items.Add("IllFormedCmd4");
+			CommandList.Items.Add("GetZoneList");
+			CommandList.Items.Add("GetTemplateList");
+			CommandList.Items.Add("GetBulletinList");
 		}
 
 		private void Connect_Click(object sender, System.EventArgs e)
@@ -379,6 +401,15 @@ namespace TesterApp
 				case "IllFormedCmd4":
                     CommandBox.Text = SampleCommand.IllFormedCmd4().Replace("\n", Environment.NewLine);
 					break;
+				case "GetZoneList":
+					CommandBox.Text = SampleCommand.GetZoneList().Replace("\n", Environment.NewLine);
+					break;
+				case "GetTemplateList":
+					CommandBox.Text = SampleCommand.GetTemplateList().Replace("\n", Environment.NewLine);
+					break;
+				case "GetBulletinList":
+					CommandBox.Text = SampleCommand.GetBulletinList().Replace("\n", Environment.NewLine);
+					break;
 			}
 
 		}
@@ -397,11 +428,18 @@ namespace TesterApp
 					cmd = Encoding.ASCII.GetBytes(CommandBox.Text.ToCharArray());
 					ns.Write(cmd, 0, cmd.Length);
 
+					// wait for data to be present
+					while(ns.DataAvailable == false)
+						System.Threading.Thread.Sleep(100);
 
 					response = new byte[socket.ReceiveBufferSize];
-					ns.Read(response, 0, socket.ReceiveBufferSize);
-					string XML = Encoding.ASCII.GetString(response).Trim().Replace("\0",""); //get rid of whitespace
-
+					string XML = String.Empty;
+					while(ns.DataAvailable) {
+						int length = ns.Read(response, 0, socket.ReceiveBufferSize);
+						if (length <= 0)
+							break;
+						XML += Encoding.ASCII.GetString(response, 0, length).Trim().Replace("\0",""); //get rid of whitespace
+					}
 					//parse the return xml
 					StringReader sr = new StringReader(XML);
 					XmlDocument xdoc = new XmlDocument();
@@ -429,6 +467,10 @@ namespace TesterApp
                     }
 
 					ResponseBox.Text += crlf;
+					ResponseBox.Text += crlf;
+					ResponseBox.Text += "Raw Response:";
+					ResponseBox.Text += crlf;
+					ResponseBox.Text += XML;
 
 				}
 				catch(Exception exc)
@@ -780,5 +822,38 @@ namespace TesterApp
 	</SomeStrangeCommand>
 </CarouselCommand>";
 		}
+		public static string GetZoneList()
+		{
+			return @"<?xml version=""1.0"" encoding=""utf-8"" ?>
+<CarouselCommand xmlns=""http://www.trms.com/CarouselRemoteCommand"">
+	<GetZoneList>
+		<UserName>xml</UserName>
+		<Password>trms</Password>
+	</GetZoneList>
+</CarouselCommand>";
+		}
+		public static string GetTemplateList()
+		{
+			return @"<?xml version=""1.0"" encoding=""utf-8"" ?>
+<CarouselCommand xmlns=""http://www.trms.com/CarouselRemoteCommand"">
+	<GetTemplateList>
+		<UserName>xml</UserName>
+		<Password>trms</Password>
+		<ZoneID>1</ZoneID>
+	</GetTemplateList>
+</CarouselCommand>";
+		}
+		public static string GetBulletinList()
+		{
+			return @"<?xml version=""1.0"" encoding=""utf-8"" ?>
+<CarouselCommand xmlns=""http://www.trms.com/CarouselRemoteCommand"">
+	<GetBulletinList>
+		<UserName>xml</UserName>
+		<Password>trms</Password>
+		<ZoneID>1</ZoneID>
+	</GetBulletinList>
+</CarouselCommand>";
+		}
+
     }
 }
