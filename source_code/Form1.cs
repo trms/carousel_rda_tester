@@ -335,6 +335,7 @@ namespace TesterApp
 			this.Name = "Form1";
 			this.Text = "Form1";
 			this.Load += new System.EventHandler(this.Form1_Load);
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox2.ResumeLayout(false);
 			this.groupBox2.PerformLayout();
@@ -355,6 +356,12 @@ namespace TesterApp
 
 		private void Form1_Load(object sender, System.EventArgs e)
 		{
+			Server.Text = Settings1.Default.Server;
+			Port.Text = Settings1.Default.Port;
+			Username.Text = Settings1.Default.Username;
+			Password.Text = Settings1.Default.Password;
+			Zone.Text = Settings1.Default.Zone;
+
 			CommandList.Items.Add("CreatePage1");
 			CommandList.Items.Add("CreatePage2");
 			CommandList.Items.Add("CreatePage3");
@@ -583,6 +590,16 @@ namespace TesterApp
 		private void CommandBox_TextChanged(object sender, EventArgs e)
 		{
 			button1.Enabled = !String.IsNullOrEmpty(CommandBox.Text.Trim());
+		}
+
+		private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			Settings1.Default.Server = Server.Text;
+			Settings1.Default.Port = Port.Text;
+			Settings1.Default.Username = Username.Text;
+			Settings1.Default.Password = Password.Text;
+			Settings1.Default.Zone = Zone.Text;
+			Settings1.Default.Save();
 		}
 	}
 	
