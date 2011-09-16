@@ -112,6 +112,7 @@ namespace TesterApp
 			this.CommandBox.Size = new System.Drawing.Size(440, 217);
 			this.CommandBox.TabIndex = 0;
 			this.CommandBox.WordWrap = false;
+			this.CommandBox.TextChanged += new System.EventHandler(this.CommandBox_TextChanged);
 			// 
 			// CommandList
 			// 
@@ -176,6 +177,7 @@ namespace TesterApp
 			// button1
 			// 
 			this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.button1.Enabled = false;
 			this.button1.Location = new System.Drawing.Point(336, 241);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(112, 23);
@@ -499,6 +501,8 @@ namespace TesterApp
 
 		private void button1_Click(object sender, System.EventArgs e)
 		{
+			if (String.IsNullOrEmpty(CommandBox.Text.Trim()))
+				return;
 			if (ns != null && ns.CanWrite && ns.CanRead)
 			{
 				try
@@ -574,6 +578,11 @@ namespace TesterApp
 		private void ClearResponses_Click(object sender, System.EventArgs e)
 		{
 			ResponseBox.Text = "";
+		}
+
+		private void CommandBox_TextChanged(object sender, EventArgs e)
+		{
+			button1.Enabled = !String.IsNullOrEmpty(CommandBox.Text.Trim());
 		}
 	}
 	
