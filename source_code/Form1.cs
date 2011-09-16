@@ -7,6 +7,7 @@ using System.Data;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.IO;
 using System.Xml;
 
@@ -33,6 +34,12 @@ namespace TesterApp
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Button Connect;
 		private System.Windows.Forms.Button ClearResponses;
+		private TextBox Zone;
+		private Label label5;
+		private Label label4;
+		private TextBox Password;
+		private Label label3;
+		private TextBox Username;
 		private System.ComponentModel.Container components = null;
 
 		#region Windows Form Designer generated code
@@ -77,6 +84,12 @@ namespace TesterApp
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.ClearResponses = new System.Windows.Forms.Button();
 			this.groupBox4 = new System.Windows.Forms.GroupBox();
+			this.Zone = new System.Windows.Forms.TextBox();
+			this.label5 = new System.Windows.Forms.Label();
+			this.label4 = new System.Windows.Forms.Label();
+			this.Password = new System.Windows.Forms.TextBox();
+			this.label3 = new System.Windows.Forms.Label();
+			this.Username = new System.Windows.Forms.TextBox();
 			this.Connect = new System.Windows.Forms.Button();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
@@ -96,7 +109,7 @@ namespace TesterApp
 			this.CommandBox.Multiline = true;
 			this.CommandBox.Name = "CommandBox";
 			this.CommandBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.CommandBox.Size = new System.Drawing.Size(440, 264);
+			this.CommandBox.Size = new System.Drawing.Size(440, 217);
 			this.CommandBox.TabIndex = 0;
 			this.CommandBox.WordWrap = false;
 			// 
@@ -153,9 +166,9 @@ namespace TesterApp
 						| System.Windows.Forms.AnchorStyles.Left)));
 			this.groupBox2.Controls.Add(this.button1);
 			this.groupBox2.Controls.Add(this.CommandBox);
-			this.groupBox2.Location = new System.Drawing.Point(8, 64);
+			this.groupBox2.Location = new System.Drawing.Point(8, 111);
 			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Size = new System.Drawing.Size(456, 320);
+			this.groupBox2.Size = new System.Drawing.Size(456, 273);
 			this.groupBox2.TabIndex = 4;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Send Commands";
@@ -163,7 +176,7 @@ namespace TesterApp
 			// button1
 			// 
 			this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.button1.Location = new System.Drawing.Point(336, 288);
+			this.button1.Location = new System.Drawing.Point(336, 241);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(112, 23);
 			this.button1.TabIndex = 4;
@@ -196,6 +209,12 @@ namespace TesterApp
 			// 
 			// groupBox4
 			// 
+			this.groupBox4.Controls.Add(this.Zone);
+			this.groupBox4.Controls.Add(this.label5);
+			this.groupBox4.Controls.Add(this.label4);
+			this.groupBox4.Controls.Add(this.Password);
+			this.groupBox4.Controls.Add(this.label3);
+			this.groupBox4.Controls.Add(this.Username);
 			this.groupBox4.Controls.Add(this.Connect);
 			this.groupBox4.Controls.Add(this.label2);
 			this.groupBox4.Controls.Add(this.label1);
@@ -203,10 +222,62 @@ namespace TesterApp
 			this.groupBox4.Controls.Add(this.Server);
 			this.groupBox4.Location = new System.Drawing.Point(8, 8);
 			this.groupBox4.Name = "groupBox4";
-			this.groupBox4.Size = new System.Drawing.Size(456, 48);
+			this.groupBox4.Size = new System.Drawing.Size(456, 97);
 			this.groupBox4.TabIndex = 6;
 			this.groupBox4.TabStop = false;
 			this.groupBox4.Text = "Connect";
+			// 
+			// Zone
+			// 
+			this.Zone.Location = new System.Drawing.Point(248, 39);
+			this.Zone.Name = "Zone";
+			this.Zone.Size = new System.Drawing.Size(40, 20);
+			this.Zone.TabIndex = 10;
+			this.Zone.Text = "1";
+			// 
+			// label5
+			// 
+			this.label5.Location = new System.Drawing.Point(181, 45);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(61, 23);
+			this.label5.TabIndex = 9;
+			this.label5.Text = "Zone:";
+			this.label5.TextAlign = System.Drawing.ContentAlignment.TopRight;
+			// 
+			// label4
+			// 
+			this.label4.Location = new System.Drawing.Point(8, 68);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(61, 23);
+			this.label4.TabIndex = 8;
+			this.label4.Text = "Password:";
+			this.label4.TextAlign = System.Drawing.ContentAlignment.TopRight;
+			// 
+			// Password
+			// 
+			this.Password.Location = new System.Drawing.Point(75, 65);
+			this.Password.Name = "Password";
+			this.Password.Size = new System.Drawing.Size(100, 20);
+			this.Password.TabIndex = 7;
+			this.Password.Text = "trms";
+			this.Password.UseSystemPasswordChar = true;
+			// 
+			// label3
+			// 
+			this.label3.Location = new System.Drawing.Point(8, 42);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(61, 23);
+			this.label3.TabIndex = 6;
+			this.label3.Text = "Username:";
+			this.label3.TextAlign = System.Drawing.ContentAlignment.TopRight;
+			// 
+			// Username
+			// 
+			this.Username.Location = new System.Drawing.Point(75, 39);
+			this.Username.Name = "Username";
+			this.Username.Size = new System.Drawing.Size(100, 20);
+			this.Username.TabIndex = 5;
+			this.Username.Text = "admin";
 			// 
 			// Connect
 			// 
@@ -219,23 +290,25 @@ namespace TesterApp
 			// 
 			// label2
 			// 
-			this.label2.Location = new System.Drawing.Point(168, 16);
+			this.label2.Location = new System.Drawing.Point(181, 16);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(30, 23);
+			this.label2.Size = new System.Drawing.Size(61, 23);
 			this.label2.TabIndex = 3;
 			this.label2.Text = "Port:";
+			this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
 			// 
 			// label1
 			// 
 			this.label1.Location = new System.Drawing.Point(8, 16);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(48, 23);
+			this.label1.Size = new System.Drawing.Size(61, 23);
 			this.label1.TabIndex = 2;
 			this.label1.Text = "Server:";
+			this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
 			// 
 			// Port
 			// 
-			this.Port.Location = new System.Drawing.Point(200, 16);
+			this.Port.Location = new System.Drawing.Point(248, 13);
 			this.Port.Name = "Port";
 			this.Port.Size = new System.Drawing.Size(40, 20);
 			this.Port.TabIndex = 1;
@@ -243,7 +316,7 @@ namespace TesterApp
 			// 
 			// Server
 			// 
-			this.Server.Location = new System.Drawing.Point(56, 16);
+			this.Server.Location = new System.Drawing.Point(75, 13);
 			this.Server.Name = "Server";
 			this.Server.Size = new System.Drawing.Size(100, 20);
 			this.Server.TabIndex = 0;
@@ -343,72 +416,82 @@ namespace TesterApp
 			ResponseBox.ScrollToCaret();
 		}
 
+		private string FixSample(string input)
+		{
+			string result = input.Replace("\n", Environment.NewLine);
+			result = Regex.Replace(result, "<ZoneID>[^<]*</ZoneID>", "<ZoneID>" + Zone.Text + "</ZoneID>");
+			result = Regex.Replace(result, "<Zone>[^<]*</Zone>", "<Zone>" + Zone.Text + "</Zone>");
+			result = Regex.Replace(result, "<UserName>[^<]*</UserName>", "<UserName>" + Username.Text + "</UserName>");
+			result = Regex.Replace(result, "<Password>[^<]*</Password>", "<Password>" + Password.Text + "</Password>");
+			return result;
+		}
+
 		private void PreMadeCommandBtn_Click(object sender, System.EventArgs e)
 		{
 			switch (CommandList.SelectedItem.ToString())
 			{
 				case "CreatePage1":
-					CommandBox.Text = SampleCommand.CreatePage1().Replace("\n", Environment.NewLine);
+					CommandBox.Text = FixSample(SampleCommand.CreatePage1());
 					break;
 				case "CreatePage2":
-                    CommandBox.Text = SampleCommand.CreatePage2().Replace("\n", Environment.NewLine);
+                    CommandBox.Text = FixSample(SampleCommand.CreatePage2());
 					break;
 				case "CreatePage3":
-                    CommandBox.Text = SampleCommand.CreatePage3().Replace("\n", Environment.NewLine);
+                    CommandBox.Text = FixSample(SampleCommand.CreatePage3());
 					break;
 				case "UpdatePage":
-                    CommandBox.Text = SampleCommand.UpdatePage().Replace("\n", Environment.NewLine);
+                    CommandBox.Text = FixSample(SampleCommand.UpdatePage());
 					break;
 				case "CreateAlertPage":
-                    CommandBox.Text = SampleCommand.CreateAlertPage().Replace("\n", Environment.NewLine);
+                    CommandBox.Text = FixSample(SampleCommand.CreateAlertPage());
 					break;
 				case "CreateCrawl":
-                    CommandBox.Text = SampleCommand.CreateCrawl().Replace("\n", Environment.NewLine);
+                    CommandBox.Text = FixSample(SampleCommand.CreateCrawl());
 					break;
 				case "CreateCrawlInvalidUser":
-                    CommandBox.Text = SampleCommand.CreateCrawlInvalidUser().Replace("\n", Environment.NewLine);
+                    CommandBox.Text = FixSample(SampleCommand.CreateCrawlInvalidUser());
 					break;
 				case "CreateCrawl1Zone":
-                    CommandBox.Text = SampleCommand.CreateCrawl1Zone().Replace("\n", Environment.NewLine);
+                    CommandBox.Text = FixSample(SampleCommand.CreateCrawl1Zone());
 					break;
 				case "CreateCrawlInvalidZone":
-                    CommandBox.Text = SampleCommand.CreateCrawlInvalidZone().Replace("\n", Environment.NewLine);
+                    CommandBox.Text = FixSample(SampleCommand.CreateCrawlInvalidZone());
 					break;
 				case "ChangePageStatus":
-                    CommandBox.Text = SampleCommand.ChangePageStatus().Replace("\n", Environment.NewLine);
+                    CommandBox.Text = FixSample(SampleCommand.ChangePageStatus());
 					break;
 				case "DeletePage":
-                    CommandBox.Text = SampleCommand.DeletePage().Replace("\n", Environment.NewLine);
+                    CommandBox.Text = FixSample(SampleCommand.DeletePage());
 					break;
 				case "DeleteAllUserPages":
-                    CommandBox.Text = SampleCommand.DeleteAllUserPages().Replace("\n", Environment.NewLine);
+                    CommandBox.Text = FixSample(SampleCommand.DeleteAllUserPages());
 					break;
 				case "DeactivateAllAlertPages":
-                    CommandBox.Text = SampleCommand.DeactivateAllAlertPages().Replace("\n", Environment.NewLine);
+                    CommandBox.Text = FixSample(SampleCommand.DeactivateAllAlertPages());
                     break;
                 case "GetPlayerStatus":
-                    CommandBox.Text = SampleCommand.GetPlayerStatus().Replace("\n", Environment.NewLine);
+                    CommandBox.Text = FixSample(SampleCommand.GetPlayerStatus());
                     break;
 				case "IllFormedCmd1":
-                    CommandBox.Text = SampleCommand.IllFormedCmd1().Replace("\n", Environment.NewLine);
+                    CommandBox.Text = FixSample(SampleCommand.IllFormedCmd1());
 					break;
 				case "IllFormedCmd2":
-                    CommandBox.Text = SampleCommand.IllFormedCmd2().Replace("\n", Environment.NewLine);
+                    CommandBox.Text = FixSample(SampleCommand.IllFormedCmd2());
 					break;
 				case "IllFormedCmd3":
-                    CommandBox.Text = SampleCommand.IllFormedCmd3().Replace("\n", Environment.NewLine);
+                    CommandBox.Text = FixSample(SampleCommand.IllFormedCmd3());
 					break;
 				case "IllFormedCmd4":
-                    CommandBox.Text = SampleCommand.IllFormedCmd4().Replace("\n", Environment.NewLine);
+                    CommandBox.Text = FixSample(SampleCommand.IllFormedCmd4());
 					break;
 				case "GetZoneList":
-					CommandBox.Text = SampleCommand.GetZoneList().Replace("\n", Environment.NewLine);
+					CommandBox.Text = FixSample(SampleCommand.GetZoneList());
 					break;
 				case "GetTemplateList":
-					CommandBox.Text = SampleCommand.GetTemplateList().Replace("\n", Environment.NewLine);
+					CommandBox.Text = FixSample(SampleCommand.GetTemplateList());
 					break;
 				case "GetBulletinList":
-					CommandBox.Text = SampleCommand.GetBulletinList().Replace("\n", Environment.NewLine);
+					CommandBox.Text = FixSample(SampleCommand.GetBulletinList());
 					break;
 			}
 
