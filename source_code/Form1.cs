@@ -694,11 +694,10 @@ namespace TesterApp
 		{
 			return @"<?xml version=""1.0"" encoding=""utf-8"" ?>
 <CarouselCommand xmlns=""http://www.trms.com/CarouselRemoteCommand"">
-	<CreatePage>
+	<UpdatePage>
 		<UserName>xml</UserName>
 		<Password>trms</Password>
 		<UpdateGUID>3dc0f1cd-eb4c-4bad-8733-15a5a13eea08</UpdateGUID>
-		<Zone>1</Zone>
 		<AlwaysOn>false</AlwaysOn>
 		<DateTimeOn>2005-09-29T00:00:00</DateTimeOn>
 		<DateTimeOff>2005-12-05T23:59:59</DateTimeOff>
@@ -707,12 +706,9 @@ namespace TesterApp
 		<Weekdays>32</Weekdays>
 		<WebEnabled>true</WebEnabled>
 		<PageType>Standard</PageType>
-		<PageTemplate>
-			<TemplateName>two column</TemplateName>
-			<Block Name=""left text area"" Value=""Left!"" />
-			<Block Name=""right text area"" Value=""Right!"" />
-		</PageTemplate>
-	</CreatePage>
+		<Block Name=""left text area"" Value=""Left!"" />
+		<Block Name=""right text area"" Value=""Right!"" />
+	</UpdatePage>
 </CarouselCommand>";
 		}
 		
