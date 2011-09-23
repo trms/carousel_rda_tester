@@ -121,7 +121,7 @@ namespace TesterApp
 			this.CommandList.Location = new System.Drawing.Point(8, 16);
 			this.CommandList.Name = "CommandList";
 			this.CommandList.Size = new System.Drawing.Size(352, 69);
-			this.CommandList.TabIndex = 1;
+			this.CommandList.TabIndex = 0;
 			// 
 			// groupBox1
 			// 
@@ -132,7 +132,7 @@ namespace TesterApp
 			this.groupBox1.Location = new System.Drawing.Point(472, 8);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Size = new System.Drawing.Size(368, 120);
-			this.groupBox1.TabIndex = 2;
+			this.groupBox1.TabIndex = 1;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Sample Commands";
 			// 
@@ -142,7 +142,7 @@ namespace TesterApp
 			this.PreMadeCommandBtn.Location = new System.Drawing.Point(8, 88);
 			this.PreMadeCommandBtn.Name = "PreMadeCommandBtn";
 			this.PreMadeCommandBtn.Size = new System.Drawing.Size(352, 23);
-			this.PreMadeCommandBtn.TabIndex = 2;
+			this.PreMadeCommandBtn.TabIndex = 1;
 			this.PreMadeCommandBtn.Text = "<-- Send to command window";
 			this.PreMadeCommandBtn.Click += new System.EventHandler(this.PreMadeCommandBtn_Click);
 			// 
@@ -157,7 +157,7 @@ namespace TesterApp
 			this.ResponseBox.ReadOnly = true;
 			this.ResponseBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
 			this.ResponseBox.Size = new System.Drawing.Size(352, 192);
-			this.ResponseBox.TabIndex = 3;
+			this.ResponseBox.TabIndex = 0;
 			this.ResponseBox.WordWrap = false;
 			this.ResponseBox.TextChanged += new System.EventHandler(this.ResponseBox_TextChanged);
 			// 
@@ -170,7 +170,7 @@ namespace TesterApp
 			this.groupBox2.Location = new System.Drawing.Point(8, 111);
 			this.groupBox2.Name = "groupBox2";
 			this.groupBox2.Size = new System.Drawing.Size(456, 273);
-			this.groupBox2.TabIndex = 4;
+			this.groupBox2.TabIndex = 2;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Send Commands";
 			// 
@@ -181,7 +181,7 @@ namespace TesterApp
 			this.button1.Location = new System.Drawing.Point(336, 241);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(112, 23);
-			this.button1.TabIndex = 4;
+			this.button1.TabIndex = 1;
 			this.button1.Text = "Send Command";
 			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
@@ -195,7 +195,7 @@ namespace TesterApp
 			this.groupBox3.Location = new System.Drawing.Point(472, 136);
 			this.groupBox3.Name = "groupBox3";
 			this.groupBox3.Size = new System.Drawing.Size(368, 248);
-			this.groupBox3.TabIndex = 5;
+			this.groupBox3.TabIndex = 3;
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "Response List";
 			// 
@@ -205,7 +205,7 @@ namespace TesterApp
 			this.ClearResponses.Location = new System.Drawing.Point(248, 216);
 			this.ClearResponses.Name = "ClearResponses";
 			this.ClearResponses.Size = new System.Drawing.Size(112, 23);
-			this.ClearResponses.TabIndex = 5;
+			this.ClearResponses.TabIndex = 1;
 			this.ClearResponses.Text = "Clear Responses";
 			this.ClearResponses.Click += new System.EventHandler(this.ClearResponses_Click);
 			// 
@@ -225,7 +225,7 @@ namespace TesterApp
 			this.groupBox4.Location = new System.Drawing.Point(8, 8);
 			this.groupBox4.Name = "groupBox4";
 			this.groupBox4.Size = new System.Drawing.Size(456, 97);
-			this.groupBox4.TabIndex = 6;
+			this.groupBox4.TabIndex = 0;
 			this.groupBox4.TabStop = false;
 			this.groupBox4.Text = "Connect";
 			// 
@@ -234,7 +234,7 @@ namespace TesterApp
 			this.Zone.Location = new System.Drawing.Point(248, 39);
 			this.Zone.Name = "Zone";
 			this.Zone.Size = new System.Drawing.Size(40, 20);
-			this.Zone.TabIndex = 10;
+			this.Zone.TabIndex = 7;
 			this.Zone.Text = "1";
 			// 
 			// label5
@@ -242,7 +242,7 @@ namespace TesterApp
 			this.label5.Location = new System.Drawing.Point(181, 45);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(61, 23);
-			this.label5.TabIndex = 9;
+			this.label5.TabIndex = 6;
 			this.label5.Text = "Zone:";
 			this.label5.TextAlign = System.Drawing.ContentAlignment.TopRight;
 			// 
@@ -260,7 +260,7 @@ namespace TesterApp
 			this.Password.Location = new System.Drawing.Point(75, 65);
 			this.Password.Name = "Password";
 			this.Password.Size = new System.Drawing.Size(100, 20);
-			this.Password.TabIndex = 7;
+			this.Password.TabIndex = 9;
 			this.Password.Text = "trms";
 			this.Password.UseSystemPasswordChar = true;
 			// 
@@ -269,7 +269,7 @@ namespace TesterApp
 			this.label3.Location = new System.Drawing.Point(8, 42);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(61, 23);
-			this.label3.TabIndex = 6;
+			this.label3.TabIndex = 4;
 			this.label3.Text = "Username:";
 			this.label3.TextAlign = System.Drawing.ContentAlignment.TopRight;
 			// 
@@ -286,7 +286,7 @@ namespace TesterApp
 			this.Connect.Location = new System.Drawing.Point(344, 16);
 			this.Connect.Name = "Connect";
 			this.Connect.Size = new System.Drawing.Size(104, 23);
-			this.Connect.TabIndex = 4;
+			this.Connect.TabIndex = 10;
 			this.Connect.Text = "Connect";
 			this.Connect.Click += new System.EventHandler(this.Connect_Click);
 			// 
@@ -295,7 +295,7 @@ namespace TesterApp
 			this.label2.Location = new System.Drawing.Point(181, 16);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(61, 23);
-			this.label2.TabIndex = 3;
+			this.label2.TabIndex = 2;
 			this.label2.Text = "Port:";
 			this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
 			// 
@@ -304,7 +304,7 @@ namespace TesterApp
 			this.label1.Location = new System.Drawing.Point(8, 16);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(61, 23);
-			this.label1.TabIndex = 2;
+			this.label1.TabIndex = 0;
 			this.label1.Text = "Server:";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
 			// 
@@ -313,7 +313,7 @@ namespace TesterApp
 			this.Port.Location = new System.Drawing.Point(248, 13);
 			this.Port.Name = "Port";
 			this.Port.Size = new System.Drawing.Size(40, 20);
-			this.Port.TabIndex = 1;
+			this.Port.TabIndex = 3;
 			this.Port.Text = "56906";
 			// 
 			// Server
@@ -321,7 +321,7 @@ namespace TesterApp
 			this.Server.Location = new System.Drawing.Point(75, 13);
 			this.Server.Name = "Server";
 			this.Server.Size = new System.Drawing.Size(100, 20);
-			this.Server.TabIndex = 0;
+			this.Server.TabIndex = 1;
 			this.Server.Text = "demo.trms.com";
 			// 
 			// Form1
